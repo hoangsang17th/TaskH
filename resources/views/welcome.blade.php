@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Wellcome to TaskGo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                overflow: hidden;
             }
 
             .full-height {
@@ -39,7 +40,15 @@
                 right: 10px;
                 top: 18px;
             }
-
+            .top-center {
+                position: absolute;
+                align: center;
+                top: 18px;
+            }
+            #timer{
+                font-weight:700;
+                font-family: bold;
+            }
             .content {
                 text-align: center;
             }
@@ -78,23 +87,42 @@
                     @endauth
                 </div>
             @endif
-
+            <div class="top-center">
+            Deadline: <span id="timer"></span>
+            </div>
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    TaskGo
                 </div>
-
+                <p>v1.1.2</p>
+                <h2>Your destination is</h2>
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a target="_blank" href="https://laravel.com/docs">Docs</a>
+                    <a href="mailto: phsang49@gmail.com">Contact</a>
+                    <a href="/home">View</a>
+                    <a target="_blank" href="https://www.facebook.com/HoangSang17TH">Author</a>
+                    <a target="_blank" href="https://github.com/hoangsang17th/TaskE">GitHub</a>
                 </div>
             </div>
         </div>
     </body>
 </html>
+<script>
+    var getYear = new Date().getFullYear();
+    var countDownDate = new Date("Dec 25, "+ getYear +" 7:30:00").getTime();
+    var countdownfunction = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("timer").innerHTML = days + ' Days' +' AND '+ hours +': '+ minutes +': '+ seconds;
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
