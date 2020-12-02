@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Apps\TodoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/navigation', function () {
-    return view('layouts.navigation');
-});
+// Route::get('/test', function () {
+//     return view('apps.todo');
+// });
 Auth::routes();
 Route::resource('todo', 'Apps\TodoController');
 // Route::get('todo', 'Apps\TodoController@index');

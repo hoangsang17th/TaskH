@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Apps;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Model\todo;
+
+use Auth;
 class TodoController extends Controller
 {
     /**
@@ -14,7 +17,12 @@ class TodoController extends Controller
      */
     public function index()
     {
-        return view('apps.todo');
+        if (Auth::check()) {
+            # code...
+        $id = Auth::user()->id;
+        $todo = todo::where('id', $id)->get();
+        return view('apps.todo', ['todo' => $todo]);
+    }
     }
 
     /**
