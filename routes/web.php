@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +19,10 @@ Route::get('/navigation', function () {
     return view('layouts.navigation');
 });
 Auth::routes();
+Route::resource('todo', 'Apps\TodoController');
+// Route::get('todo', 'Apps\TodoController@index');
 
+// Route::get(['/customer', 'middleware' => 'admins'], function () {
+//     return view('management.customer');
+// });
 Route::get('/home', 'HomeController@index')->name('home');

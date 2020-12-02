@@ -31,7 +31,7 @@
         <header class="header navbar navbar-expand-sm">
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="assets/img/Logo.png"> <span class="navbar-brand-name">TaskGo</span></a>
+                <a class="navbar-brand" href="home"><img alt="logo" src="assets/img/Logo.png"> <span class="navbar-brand-name">TaskGo</span></a>
             </div>
             <ul class="navbar-item flex-row mr-auto">
                 <li class="nav-item align-self-center search-animated">
@@ -151,18 +151,18 @@
             <nav id="topbar">
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
-                        <a href="index">
+                        <a href="home">
                             <img src="assets/img/Logo.png" class="navbar-logo" alt="logo">
                         </a>
                     </li>
                     <li class="nav-item theme-text">
-                        <a href="index" class="nav-link"> TaskGo </a>
+                        <a href="home" class="nav-link"> TaskGo </a>
                     </li>
                 </ul>
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
                     <li class="menu single-menu">
-                        <a href="/index">
+                        <a href="/home">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 <span>Home</span>
@@ -209,6 +209,8 @@
                             </div>
                         </a>
                     </li>
+                    {{-- Manager --}}
+                    @if (Auth::user()->Position_ID == 1)
                     <li class="menu single-menu">
                         <a href="#management" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
@@ -222,7 +224,7 @@
                                 <a href="form_bootstrap_basic.html"> Staff for Project </a>
                             </li>
                             <li>
-                                <a href="form_input_group_basic.html"> Customer </a>
+                                <a href="customer"> Customer </a>
                             </li>
                             <li>
                                 <a href="form_layouts.html"> Projects </a>
@@ -232,6 +234,9 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
+                    {{-- Admin --}}
+                    @if (Auth::user()->Position_ID == 2)
                     <li class="menu single-menu">
                         <a href="#more" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
@@ -252,6 +257,7 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
                 </ul>
             </nav>
         </div>

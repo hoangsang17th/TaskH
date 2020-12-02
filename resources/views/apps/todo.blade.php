@@ -2,7 +2,7 @@
 @extends('layouts.navigation')
 
 <!-- Title page -->
-@section('title', 'ToDo List - TaskGo IT')
+@section('title', 'ToDo List')
 
 <!-- includes file css of the page -->
 @section('style')
