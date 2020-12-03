@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Apps;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Model\todo;
-use App\Model\user;
-
 use Auth;
-class TodoController extends Controller
+use App\Model\user;
+use App\Model\user_info;
+
+
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +20,10 @@ class TodoController extends Controller
         if (Auth::check()) {
             # code...
             $id = Auth::user()->id;
-            $todo = todo::where('id', $id)->get();
-            return view('apps.todo', ['todo' => $todo]);
+            $user = user::where('id', $id)->get();
+            $user_info = user_info::where('id', $id)->get();
+            return view('user.profile', ['user' => $user],['user_info' => $user_info]);
+        // return view('user.profile');
         }
     }
 
@@ -55,7 +56,7 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -78,7 +79,7 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('user.account-setting');
     }
 
     /**

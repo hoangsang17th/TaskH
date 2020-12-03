@@ -101,7 +101,7 @@ var quill = new Quill('#taskdescription', {
       ['image', 'code-block']
     ]
   },
-  placeholder: 'Compose an epic...',
+  placeholder: 'Describe the work to be done',
   theme: 'snow'  // or 'bubble'
 });
 

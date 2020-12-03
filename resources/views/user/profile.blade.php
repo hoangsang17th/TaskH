@@ -1,7 +1,7 @@
 @extends('layouts.navigation')
 @section('title', 'Manager Tối Cao')
 @section('style')
-    <link href="assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 <div class="row layout-spacing">
@@ -15,7 +15,11 @@
                 </div>
                 <div class="text-center user-info">
                     <img src="assets/img/avatar-2.png" alt="avatar" width="90px" class="rounded-circle  bs-tooltip" data-original-title="Manager Tối Cao" data-placement="bottom" >
-                    <p class="">Manager Tối Cao</p>
+                <p class="">
+                    @foreach ($user as $value)
+                    {{$value->name}}
+                    @endforeach
+                </p>
                 </div>
                 <div class="user-info-list">
 
@@ -76,9 +80,9 @@
         <div class="bio layout-spacing ">
             <div class="widget-content widget-content-area pb-3">
                 <h3 class="">Bio</h3>
-                <p>I'm Web Developer from California. I code and design websites worldwide. Mauris varius tellus vitae tristique sagittis. Sed aliquet, est nec auctor aliquet, orci ex vestibulum ex, non pharetra lacus erat ac nulla.</p>
-
-                <p>Sed vulputate, ligula eget mollis auctor, lectus elit feugiat urna, eget euismod turpis lectus sed ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut velit finibus, scelerisque sapien vitae, pharetra est. Nunc accumsan ligula vehicula scelerisque vulputate.</p>
+                <p>@foreach ($user_info as $value)
+                    {{$value->User_Des}}
+                    @endforeach</p>
             </div>                                
         </div>
     </div>

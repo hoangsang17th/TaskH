@@ -3,6 +3,9 @@
 @section('style')
     <link rel="stylesheet" type="text/css" href="plugins/dropify/dropify.min.css">
     <link href="assets/css/users/account-setting.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+    <link href="plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+
 @endsection
 @section('content')
 <div class="account-settings-container layout-top-spacing">
@@ -34,7 +37,7 @@
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="fullName">Birth of Day</label>
-                                                            <input type="text" class="form-control mb-4" placeholder="Date" value="4/9/2001">
+                                                            <input id="basicFlatpickr" value="2001-09-11" class="form-control flatpickr flatpickr-input active" type="text" placeholder="Select Date..">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -58,7 +61,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="email">Email</label>
-                                                            <input type="text" class="form-control mb-4" id="email" placeholder="Write your email here" value="Jimmy@gmail.com">
+                                                            <input type="email" class="form-control mb-4" id="email" placeholder="Write your email here" value="Jimmy@gmail.com">
                                                         </div>
                                                     </div>
                                                     <div class="col-12 mx-auto">
@@ -110,10 +113,8 @@
 @section('javascript')
 <script src="plugins/dropify/dropify.min.js"></script>
 <script src="plugins/blockui/jquery.blockUI.min.js"></script>
-<!-- <script src="plugins/tagInput/tags-input.js"></script> -->
 <script src="assets/js/users/account-settings.js"></script>
-    <script src="plugins/flatpickr/custom-flatpickr.js"></script>
-    <script src="plugins/flatpickr/flatpickr.js"></script>
-
+<script src="plugins/flatpickr/flatpickr.js"></script>
+<script src="plugins/flatpickr/custom-flatpickr.js"></script>
 
 @endsection
