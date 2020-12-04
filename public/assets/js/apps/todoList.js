@@ -356,19 +356,7 @@ $(".add-tsk").click(function(){
                       "<p class='todo-text' data-todoHtml='"+$_taskDescriptionInnerHTML+"' data-todoText='"+$_textDelta+"'> "+$_taskDescriptionText+"</p>"+
                   '</div>'+
   
-                  '<div class="priority-dropdown">'+
-                      '<div class="dropdown p-dropdown">'+
-                          '<a class="dropdown-toggle primary" href="#" role="button" id="dropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'+
-                              '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>'+
-                          '</a>'+
-  
-                          '<div class="dropdown-menu" aria-labelledby="dropdownMenuLink-4">'+
-                              '<a class="dropdown-item danger" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg> High</a>'+
-                              '<a class="dropdown-item warning" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg> Middle</a>'+
-                              '<a class="dropdown-item primary" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg> Low</a>'+
-                          '</div>'+
-                      '</div>'+
-                  '</div>'+
+                  
   
                   '<div class="action-dropdown">'+
                       '<div class="dropdown">'+
@@ -378,10 +366,7 @@ $(".add-tsk").click(function(){
   
                           '<div class="dropdown-menu" aria-labelledby="dropdownMenuLink-4">'+
                               '<a class="dropdown-item edit" href="javascript:void(0);">Edit</a>'+
-                              '<a class="important dropdown-item" href="javascript:void(0);">Important</a>'+
                               '<a class="dropdown-item delete" href="javascript:void(0);">Delete</a>'+
-                              '<a class="dropdown-item permanent-delete" href="javascript:void(0);">Permanent Delete</a>'+
-                              '<a class="dropdown-item revive" href="javascript:void(0);">Revive Task</a>'+
                           '</div>'+
                       '</div>'+
                   '</div>'+

@@ -16,15 +16,15 @@ class CreateUserInfosTable extends Migration
         Schema::create('user_infos', function (Blueprint $table) {
             $table->increments('Info_ID');
             $table->integer('id');
-            $table->longText('Account_Avatar');
-            $table->integer('User_Phone');
-            $table->string('User_Profession');
-            $table->string('User_Address');
-            $table->time('User_Birthday');
-            $table->string('User_Gender');
-            $table->string('User_Facebook');
-            $table->string('User_LinkedIn');
-            $table->longText('User_Des');
+            $table->longText('Account_Avatar')->nullable();
+            $table->integer('User_Phone')->nullable();
+            $table->string('User_Profession')->nullable();
+            $table->string('User_Address')->nullable();
+            $table->time('User_Birthday')->nullable();
+            $table->string('User_Gender')->nullable();
+            $table->string('User_Facebook')->nullable();
+            $table->string('User_LinkedIn')->nullable();
+            $table->longText('User_Des')->nullable();
         });
     }
 

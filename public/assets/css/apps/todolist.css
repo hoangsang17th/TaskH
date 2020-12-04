@@ -235,9 +235,9 @@
     width: 100%;
     padding: 20px 10px 20px 10px; }
   .todo-inbox .todo-item .todo-item-inner .todo-heading {
-    font-size: 18px;
-    font-weight: 700;
-    color: #515365;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e1f29;
     margin-bottom: 2px;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease; }
@@ -245,10 +245,9 @@
     -webkit-transform: translateY(0) scale(1.01);
     transform: translateY(0) scale(1.01); }
   .todo-inbox .todo-item .todo-item-inner p.todo-text {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 0;
-    color: #acb0c3;
-    font-weight: 600;
+    font-weight: 400;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
     overflow: hidden !important;

@@ -266,6 +266,7 @@
         <!--  BEGIN CONTENT PART  -->
         <div id="content" class="main-content pt-2">
             <div class="layout-px-spacing">
+                
                 @yield('content')
 
                 <div class="footer-wrapper mt-2">

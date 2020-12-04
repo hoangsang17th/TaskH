@@ -11,6 +11,7 @@ class user extends Model
         'id',
         'name',
         'email',
+        'password',
         'Position_ID',
     ];
 }

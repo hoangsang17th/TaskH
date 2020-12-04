@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Apps\TodoController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Middleware\Authenticate;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +23,10 @@ Route::get('/test', function () {
     return view('user.account-setting');
 });
 Auth::routes();
-Route::resource('todo', 'Apps\TodoController');
-Route::resource('profile', 'ProfileController');
-
-Route::get('/1', 'ProfileController@index');
-// Route::get(['/customer', 'middleware' => 'admins'], function () {
-//     return view('management.customer');
-// });
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('todo', 'Apps\TodoController');
+    Route::resource('profile', 'ProfileController');
+    Route::resource('projects', 'Apps\ProjectController');
+    
+});
 Route::get('/home', 'HomeController@index')->name('home');

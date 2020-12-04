@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Apps;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\todo;
+use App\Model\project;
 use Auth;
-class TodoController extends Controller
+
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +19,11 @@ class TodoController extends Controller
         if (Auth::check()) {
             # code...
             $id = Auth::user()->id;
-            $todo = todo::where('id', $id)->get();
-            return view('apps.todo', ['todo' => $todo]);
+            $project = project::all();
+            // $project = project::paginate(10); Giống limit bên php á
+            // Để qua trang 2 chỉ cần gõ ?page=2
+            // Quá ngon
+            return view('apps.project', ['project' => $project]);
         }
     }
 
@@ -30,7 +34,7 @@ class TodoController extends Controller
      */
     public function create()
     {
-        // Trang có cái form nhập dữ liệu
+        //
     }
 
     /**
@@ -41,12 +45,7 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        $todo = new todo;
-        $todo->Mission_ToDo = $request->Mission_ToDo;
-        $todo->Des_ToDo = $request->Des_ToDo;
-        $todo->id = Auth::user()->id;
-        $todo->save();
-        return redirect()->route('todo.index');
+        //
     }
 
     /**

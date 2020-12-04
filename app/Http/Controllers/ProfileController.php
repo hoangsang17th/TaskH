@@ -20,9 +20,8 @@ class ProfileController extends Controller
         if (Auth::check()) {
             # code...
             $id = Auth::user()->id;
-            $user = user::where('id', $id)->get();
             $user_info = user_info::where('id', $id)->get();
-            return view('user.profile', ['user' => $user],['user_info' => $user_info]);
+            return view('user.profile', compact('user_info'));
         // return view('user.profile');
         }
     }
@@ -56,7 +55,12 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
+        if (Auth::check()) {
+            $user_info = user_info::where('id', $id)->get();
+            return view('user.profile', compact('user_info'));
+            // return redirect('profile/'.$id, compact('user_info'));
         
+        }
     }
 
     /**
