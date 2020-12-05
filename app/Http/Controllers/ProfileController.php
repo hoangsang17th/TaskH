@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Model\user;
-use App\Model\user_info;
+// use App\Model\user;
+// use App\Model\user_info;
 
 
 class ProfileController extends Controller
@@ -19,10 +19,10 @@ class ProfileController extends Controller
     {
         if (Auth::check()) {
             # code...
-            $id = Auth::user()->id;
-            $user_info = user_info::where('id', $id)->get();
-            return view('user.profile', compact('user_info'));
-        // return view('user.profile');
+            // $id = Auth::user()->id;
+            // $user_info = user_info::where('id', $id)->get();
+            // return view('user.profile', compact('user_info'));
+        return view('user.profile');
         }
     }
 

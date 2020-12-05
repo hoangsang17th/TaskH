@@ -7,7 +7,6 @@
     <title>@yield('title') - TaskGo IT</title>
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="assets/js/loader.js"></script>
-
     <!-- GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -25,7 +24,6 @@
             </div>
         </div>
     </div>
-
     <!--  BEGIN NAVBAR  -->
     <div class="header-container">
         <header class="header navbar navbar-expand-sm">
@@ -107,7 +105,7 @@
                 <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media avatar">
-                            <img src="assets/img/Avatar-1.png" class="rounded-circle" alt="admin-profile">
+                            <img src="assets/img/{{Auth::user()->Avatar}}" class="rounded-circle" alt="admin-profile">
                             <div class="media-body align-self-center">
                                 <h6><span>Hi,</span> {{ Auth::user()->name }}</h6>
                             </div>
@@ -139,13 +137,10 @@
             </ul>
         </header>
     </div>
-
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container" id="container">
-
         <div class="overlay"></div>
         <div class="search-overlay"></div>
-
         <!--  BEGIN TOPBAR  -->
         <div class="topbar-nav header navbar" role="banner">
             <nav id="topbar">
@@ -221,16 +216,16 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="management"  data-parent="#topAccordion">
                             <li>
-                                <a href="form_bootstrap_basic.html"> Staff for Project </a>
+                                <a href="staff_for_project"> Staff for Project </a>
                             </li>
                             <li>
                                 <a href="customer"> Customer </a>
                             </li>
                             <li>
-                                <a href="form_layouts.html"> Projects </a>
+                                <a href="all_project"> Projects </a>
                             </li>
                             <li>
-                                <a href="form_validation.html"> Skill </a>
+                                <a href="skill"> Skill </a>
                             </li>
                         </ul>
                     </li>
@@ -247,13 +242,13 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
                             <li>
-                                <a href="dragndrop_dragula.html"> Config Page</a>
+                                <a href="config_page"> Config Page</a>
                             </li>
                             <li>
-                                <a href="widgets.html"> Account Management </a>
+                                <a href="users"> Account Management </a>
                             </li>
                             <li>
-                                <a href="map_jvector.html"> Send Email</a>
+                                <a href="sendemail"> Send Email</a>
                             </li>
                         </ul>
                     </li>

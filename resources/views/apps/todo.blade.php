@@ -13,7 +13,7 @@
 <!-- This is content of the page -->
 @section('content')
 
-<div class="col-xl-12 col-lg-12 col-md-12 mt-5 pt-2">
+<div class="col-xl-12 col-lg-12 col-md-12 mt-lg-0 mt-5 pt-2">
     <div class="mail-box-container">
         <div class="mail-overlay"></div>
 
@@ -28,7 +28,7 @@
                     <div class="col-md-12 col-sm-12 col-12 mt-4 pl-0">
                         <ul class="nav nav-pills d-block" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link list-actions active" id="all-list" data-toggle="pill" href="#pills-inbox" role="tab" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg> All <span class="todo-badge badge"></span></a>
+                                <a class="nav-link list-actions active" id="all-list" data-toggle="pill" href="#pills-inbox" role="tab" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg> Inbox <span class="todo-badge badge"></span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link list-actions" id="todo-task-done" data-toggle="pill" href="#pills-sentmail" role="tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> Done <span class="todo-badge badge"></span></a>
@@ -51,11 +51,11 @@
                 <div id="ct" class="todo-box-scroll">
                     @foreach ($todo as $value)
                         @if ($value->Completion_Date!= "")
-                            <?php $done = "todo-task-done"; ?>
+                            <?php $task = "todo-task-done"; ?>
                         @else
-                            <?php $done = ""; ?>
+                            <?php $task = ""; ?>
                         @endif
-                        <div class="todo-item all-list {{$done}}">
+                        <div class="todo-item {{$task}} all-list">
                             <div class="todo-item-inner">
                                 <div class="n-chk text-center">
                                     <label class="new-control new-checkbox checkbox-primary">

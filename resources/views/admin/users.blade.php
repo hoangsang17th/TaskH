@@ -15,7 +15,7 @@
                     <form class="form-inline my-2 my-lg-0">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                            <input type="text" class="form-control product-search" id="input-search" placeholder="Search Contacts...">
+                            <input type="text" class="form-control product-search" id="input-search" placeholder="Search User...">
                         </div>
                     </form>
                 </div>
@@ -57,18 +57,10 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="contact-occupation">
                                                             <i class="flaticon-fill-area"></i>
                                                             <input type="text" id="c-occupation" class="form-control" placeholder="Occupation">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="contact-phone">
-                                                            <i class="flaticon-telephone"></i>
-                                                            <input type="text" id="c-phone" class="form-control" placeholder="Phone">
-                                                            <span class="validation-text"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -108,12 +100,6 @@
                         <div class="user-email">
                             <h4>Email</h4>
                         </div>
-                        <div class="user-location">
-                            <h4 style="margin-left: 0;">Location</h4>
-                        </div>
-                        <div class="user-phone">
-                            <h4 style="margin-left: 3px;">Phone</h4>
-                        </div>
                         <div class="user-position">
                             <h4 style="margin-left: 3px;">Position</h4>
                         </div>
@@ -124,39 +110,31 @@
                 </div>
 
 
+                @foreach ($user as $v_user)
+                {{ $v_user->user_infos->User_Address}}
                 <div class="items">
                     <div class="item-content">
                         <div class="user-profile">
-                            
-                            <img src="assets/img/90x90.jpg" alt="avatar">
+                            <img src="assets/img/avatar-1.png" alt="avatar" width="90px">
                             <div class="user-meta-info">
-                                <p class="user-name" data-name="Linda Nelson">Linda Nelson</p>
-                                <p class="user-work" data-occupation="Web Designer">Web Designer</p>
+                                <p class="user-name" data-name="{{ $v_user->name }}">{{ $v_user->name }}</p>
                             </div>
                         </div>
                         <div class="user-email">
                             <p class="info-title">Email: </p>
-                            <p class="usr-email-addr" data-email="linda@mail.com">linda@mail.com</p>
-                        </div>
-                        <div class="user-location">
-                            <p class="info-title">Location: </p>
-                            <p class="usr-location" data-location="Sydney, Australia">Sydney, Australia</p>
+                            <p class="usr-email-addr" data-email="{{ $v_user->email }}">{{ $v_user->email }}</p>
                         </div>
                         <div class="user-phone">
-                            <p class="info-title">Phone: </p>
-                            <p class="usr-ph-no" data-phone="+1 (070) 123-4567">+1 (070) 123-4567</p>
-                        </div>
-                        <div class="user-phone">
-                            <p class="info-title">Phone: </p>
-                            <p class="usr-ph-no" data-phone="+1 (070) 123-4567">+1 (070) 123-4567</p>
+                            <p class="info-title">Position: </p>
+                            <p class="usr-ph-no" data-phone="{{ $v_user->Position_ID }}">{{ $v_user->Position_ID }}</p>
                         </div>
                         <div class="action-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 edit"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-minus delete"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="23" y1="11" x2="17" y2="11"></line></svg>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
 
         </div>

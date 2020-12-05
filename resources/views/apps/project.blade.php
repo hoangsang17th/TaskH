@@ -18,7 +18,7 @@
         <div class="col-3 layout-top-spacing">
             <div class="card component-card_3">
                 <div class="card-body">
-                    <img src="assets/img/avatar-1.png" class="card-img-top" alt="...">
+                    <img src="assets/img/avatar-4.png" class="card-img-top" alt="...">
                     <h5 class="card-user_name mt-3">TaskGo</h5>
                     <p class="card-user_occupation">10/12/2020</p>
                     <div class="card-star_rating">

@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('Project_ID');
             $table->integer('Customer_ID');
             $table->string('Project_Name');
-            $table->integer('Status_ID');
+            $table->integer('Status_ID')->default('1');
             $table->longText('Des_Project')->nullable();
             $table->date('Start_Date')->nullable();
             $table->date('Completion_Date')->nullable();

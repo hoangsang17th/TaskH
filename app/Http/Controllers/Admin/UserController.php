@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Apps;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\todo;
 use Auth;
-class TodoController extends Controller
+use App\Model\user;
+use App\Model\user_info;
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +17,11 @@ class TodoController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            # code...
-            $id = Auth::user()->id;
-            $todos = todo::where('id', $id)->get();
-            $todo = $todos->sortByDesc('ToDo_ID');
-            return view('apps.todo', ['todo' => $todo]);
+            $user = user::all();
+            $user_info = user_info::all();
+            return view('admin.users', compact('user_info'), compact('user'));
         }
+        
     }
 
     /**
@@ -31,7 +31,7 @@ class TodoController extends Controller
      */
     public function create()
     {
-        // Trang có cái form nhập dữ liệu
+        //
     }
 
     /**
@@ -42,12 +42,7 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        $todo = new todo;
-        $todo->Mission_ToDo = $request->Mission_ToDo;
-        $todo->Des_ToDo = $request->Des_ToDo;
-        $todo->id = Auth::user()->id;
-        $todo->save();
-        return redirect()->route('todo.index');
+        //
     }
 
     /**
