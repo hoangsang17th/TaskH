@@ -32,6 +32,9 @@ class TodoController extends Controller
     public function create()
     {
         // Trang có cái form nhập dữ liệu
+        // return view('todo.create');
+        // Trong form này action gửi về trang todo.store để lưu vào database
+        // action= "{{ route('todo.store') }}"
     }
 
     /**
@@ -58,7 +61,7 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        //
+        return "123+ ".$id;
     }
 
     /**
@@ -69,7 +72,8 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "Trang này edit";
+        // todo/$id/edit phương thức get
     }
 
     /**
@@ -92,6 +96,9 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $todo = todo::where('ToDo_ID', $id);
+        $todo->delete();
+        return redirect()->route('todo.index');
+        // return $todo->Mission_ToDo;
     }
 }

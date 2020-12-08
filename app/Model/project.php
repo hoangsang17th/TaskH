@@ -17,4 +17,9 @@ class project extends Model
         'Completion_Date',
         'Budget',
     ];
+    public function StaffProject()
+    {
+        # code...
+        return $this->hasMany('App\Model\StaffProject', 'Project_ID', 'Project_ID');
+    }
 }

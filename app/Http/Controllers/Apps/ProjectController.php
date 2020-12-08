@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Apps;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\project;
+use App\Model\StaffProject;
 use Auth;
-
 class ProjectController extends Controller
 {
     /**
@@ -19,11 +19,15 @@ class ProjectController extends Controller
         if (Auth::check()) {
             # code...
             $id = Auth::user()->id;
-            $project = project::all();
+            $StaffProject = StaffProject::where('id', $id)->get();
+            // foreach ($StaffProject as $StaffProject){
+            //     echo $StaffProject->project->Project_Name;
+            // }
+            // $project = project::where('Project_ID', $StaffProject->Project_ID)->get();
             // $project = project::paginate(10); Giống limit bên php á
             // Để qua trang 2 chỉ cần gõ ?page=2
             // Quá ngon
-            return view('apps.project', ['project' => $project]);
+            return view('apps.project', ['project' => $StaffProject]);
         }
     }
 
