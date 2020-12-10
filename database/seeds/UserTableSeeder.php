@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Model\user;
-
+use App\Model\UserModel;
+use Illuminate\Support\Facades\Hash;
 class UserTableSeeder extends Seeder
 {
     /**
@@ -14,11 +14,11 @@ class UserTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         for($i=0; $i<=100; $i++){
-        $user = new user;
+        $user = new UserModel;
         $user->name = $faker->name;
         $user->email = $faker->freeEmail;
-        $user->password = $faker->sha256;
-        $user->Position_ID = rand(1,3);
+        $user->password = Hash::make('12345678');
+        $user->Position_ID = 1;
         $user->save();
         }
     }

@@ -74,7 +74,6 @@ class ProfileController extends Controller
         else{
         return redirect()->route('home');
         }
-        
     }
 
     /**
@@ -86,7 +85,17 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $user_info = UserModel::find($id);
+        $user_info->name = $request->name ;
+        $user_info->Birthday = $request->Birthday ;
+        $user_info->Profession = $request->Profession ;
+        $user_info->Address = $request->Address ;
+        $user_info->Phone = $request->Phone ;
+        $user_info->Des = $request->Des ;
+        $user_info->LinkedIn = $request->LinkedIn ;
+        $user_info->Facebook = $request->Facebook ;
+        $user_info->save();
+        return redirect()->route('profile.index');
     }
 
     /**

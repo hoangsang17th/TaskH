@@ -16,10 +16,7 @@
 
 <!-- This is content of the page -->
 @section('content')
-
-
 <div class="row layout-top-spacing" id="cancel-row">
-                
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
         <div class="widget-content widget-content-area br-6">
             <div class="text-center">
@@ -68,14 +65,11 @@
                                             </form>
                                         </a>
                                     </div>
-                                </div>
-                                
-                                
+                                </div>                                
                             </td>
                         </tr>
                         @endif
                         @endforeach
-                        
                     </tbody>
                     <tfoot>
                         <tr>
@@ -141,9 +135,7 @@
         </div>
     </div>
 </div>
-
 @endsection
-
 <!-- Includes file javascript of the page -->
 @section('javascript')
 <script src="plugins/editors/quill/quill.js"></script>

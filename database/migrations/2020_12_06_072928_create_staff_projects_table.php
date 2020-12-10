@@ -15,10 +15,8 @@ class CreateStaffProjectsTable extends Migration
     {
         Schema::create('staff_projects', function (Blueprint $table) {
             $table->increments('SProject_ID');
-            $table->integer('Project_ID')->unsigned();
-            $table->foreign('Project_ID')->references('Project_ID')->on('projects');
-            $table->integer('id')->unsigned();
-            $table->foreign('id')->references('id')->on('users');
+            $table->integer('Project_ID');
+            $table->integer('id');
             $table->timestamps();
         });
     }

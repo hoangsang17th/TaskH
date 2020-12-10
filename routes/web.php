@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('todo', 'Apps\TodoController');
     Route::resource('profile', 'ProfileController');
     Route::resource('projects', 'Apps\ProjectController');
-    Route::resource('users', 'Admin\UserController');
+    Route::resource('accounts', 'Admin\UserController');
     
 Route::get('/home', 'HomeController@index')->name('home');
 });

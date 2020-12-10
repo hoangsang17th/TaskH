@@ -158,7 +158,7 @@
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
                     <li class="menu single-menu">
-                        <a href="/home">
+                        <a href="{{url('home')}}">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                                 <span>Home</span>
@@ -166,7 +166,7 @@
                         </a>
                     </li>
                     <li class="menu single-menu">
-                        <a href="/projects">
+                        <a href="{{url('projects')}}">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
                                 <span>Projects</span>
@@ -174,7 +174,7 @@
                         </a>
                     </li>
                     <li class="menu single-menu">
-                        <a href="/tasks">
+                        <a href="{{url('tasks')}}">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                                 <span>Tasks</span>
@@ -190,7 +190,7 @@
                         </a>
                     </li>
                     <li class="menu single-menu">
-                        <a href="/todo">
+                        <a href="{{url('todo')}}">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                                 <span>ToDo</span>
@@ -198,7 +198,7 @@
                         </a>
                     </li>
                     <li class="menu single-menu">
-                        <a href="/notes">
+                        <a href="{{url('notes')}}">
                             <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                                 <span>Notes</span>
@@ -217,16 +217,16 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="management"  data-parent="#topAccordion">
                             <li>
-                                <a href="staff_for_project"> Staff for Project </a>
+                                <a href="{{url('staff_for_project')}}"> Staff for Project </a>
                             </li>
                             <li>
-                                <a href="customer"> Customer </a>
+                                <a href="{{url('customer')}}"> Customer </a>
                             </li>
                             <li>
-                                <a href="all_project"> Projects </a>
+                                <a href="{{url('all_project')}}"> Projects </a>
                             </li>
                             <li>
-                                <a href="skill"> Skill </a>
+                                <a href="{{url('skill')}}"> Skill </a>
                             </li>
                         </ul>
                     </li>
@@ -243,13 +243,13 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
                             <li>
-                                <a href="config_page"> Config Page</a>
+                                <a href="{{url('config_page')}}"> Config Page</a>
                             </li>
                             <li>
-                                <a href="users"> Account Management </a>
+                                <a href="{{url('accounts')}}"> Account Management </a>
                             </li>
                             <li>
-                                <a href="sendemail"> Send Email</a>
+                                <a href="{{url('sendemail')}}"> Send Email</a>
                             </li>
                         </ul>
                     </li>
