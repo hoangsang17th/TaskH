@@ -19,8 +19,8 @@ use App\Http\Middleware\Authenticate;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/test', function () {
-    return view('user.account-setting');
+Route::get('/notes', function () {
+    return view('apps.notes');
 });
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
@@ -29,5 +29,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('projects', 'Apps\ProjectController');
     Route::resource('users', 'Admin\UserController');
     
-});
 Route::get('/home', 'HomeController@index')->name('home');
+});
+Route::get('/mission', 'Apps\ToDoCompletionController@index');

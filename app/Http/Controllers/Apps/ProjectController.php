@@ -60,7 +60,13 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $StaffProject = StaffProject::where('id', $id)->get();
+        // $todo = todo::where('id', Auth::user()->id)
+        //                 ->where('ToDo_ID', '=', $id)
+        //                 ->get();
+        // return view('apps.edittodo', compact('todo'));
+        // todo/$id
+        // return View('apps.edittodo')->with('todo', $todo);
     }
 
     /**

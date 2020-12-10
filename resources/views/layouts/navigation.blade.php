@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>@yield('title') - TaskGo IT</title>
-    <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
-    <script src="assets/js/loader.js"></script>
+    <link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('assets/js/loader.js') }}"></script>
     <!-- GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <!-- PAGE STYLES -->
     @yield('style')
 
@@ -29,7 +29,7 @@
         <header class="header navbar navbar-expand-sm">
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="home"><img alt="logo" src="assets/img/Logo.png"> <span class="navbar-brand-name">TaskGo</span></a>
+                <a class="navbar-brand" href="home"><img alt="logo" src="{{ asset('assets/img/Logo.png') }}"> <span class="navbar-brand-name">TaskGo</span></a>
             </div>
             <ul class="navbar-item flex-row mr-auto">
                 <li class="nav-item align-self-center search-animated">
@@ -105,7 +105,8 @@
                 <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media avatar">
-                            <img src="assets/img/{{Auth::user()->Avatar}}" class="rounded-circle" alt="admin-profile">
+                            <?php $Avatar = Auth::user()->Avatar;?>
+                        <img src="http://task.com/assets/img/{{Auth::user()->Avatar}}" class="rounded-circle" alt="Avatar-profile">
                             <div class="media-body align-self-center">
                                 <h6><span>Hi,</span> {{ Auth::user()->name }}</h6>
                             </div>
@@ -147,7 +148,7 @@
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="home">
-                            <img src="assets/img/Logo.png" class="navbar-logo" alt="logo">
+                            <img src="{{ asset('assets/img/Logo.png') }}" class="navbar-logo" alt="logo">
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -277,19 +278,19 @@
         </div>
         <!--  END CONTENT PART  -->
     </div>
-
+    
     <!-- GLOBAL MANDATORY SCRIPTS -->
-    <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
-    <script src="bootstrap/js/popper.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
             App.init();
         });
     </script>
-    <script src="assets/js/custom.js"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
     <!-- PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     @yield('javascript')
 </body>

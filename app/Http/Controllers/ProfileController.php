@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-// use App\Model\user;
+use App\Model\UserModel;
 // use App\Model\user_info;
 
 
@@ -18,11 +18,11 @@ class ProfileController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            # code...
-            // $id = Auth::user()->id;
-            // $user_info = user_info::where('id', $id)->get();
-            // return view('user.profile', compact('user_info'));
-        return view('user.profile');
+            # code...UserModel
+            $id = Auth::user()->id;
+            $user_info = UserModel::find($id);
+            return view('user.profile', compact('user_info'));
+        // return view('user.profile');
         }
     }
 
@@ -55,12 +55,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        if (Auth::check()) {
-            $user_info = user_info::where('id', $id)->get();
-            return view('user.profile', compact('user_info'));
-            // return redirect('profile/'.$id, compact('user_info'));
-        
-        }
+        $user_info = UserModel::find($id);
+        return view('user.profile', compact('user_info'));
     }
 
     /**
@@ -71,7 +67,14 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Auth::user()->id == $id){
+            $user_info = UserModel::find($id);
+            return view('user.profile_edit', compact('user_info'));
+        } 
+        else{
+        return redirect()->route('home');
+        }
+        
     }
 
     /**
@@ -83,7 +86,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return view('user.account-setting');
+
     }
 
     /**

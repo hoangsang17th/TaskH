@@ -35,6 +35,8 @@ class TodoController extends Controller
         // return view('todo.create');
         // Trong form này action gửi về trang todo.store để lưu vào database
         // action= "{{ route('todo.store') }}"
+        // return "456";
+        // todo/create
     }
 
     /**
@@ -61,7 +63,12 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        return "123+ ".$id;
+        // $todo = todo::where('id', Auth::user()->id)
+        //                 ->where('ToDo_ID', '=', $id)
+        //                 ->get();
+        // return view('apps.edittodo', compact('todo'));
+        // todo/$id
+        // return View('apps.edittodo')->with('todo', $todo);
     }
 
     /**
@@ -72,7 +79,7 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        return "Trang này edit";
+        // return "Trang này edit";
         // todo/$id/edit phương thức get
     }
 
@@ -83,9 +90,18 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $ToDo_ID)
     {
-        //
+        // return "hello";
+        // return $id;
+        $todoupdate = todo::find($ToDo_ID);
+        // where('ToDo_ID', $ToDo_ID)
+        //                     ->first();
+        // return $request->Completion_Date;
+        $todoupdate->Completion_Date = $request->Completion_Date;
+        // return $todo->ToDo_ID;
+        $todoupdate->save();
+        return redirect()->route('todo.index');
     }
 
     /**
