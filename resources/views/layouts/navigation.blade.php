@@ -11,6 +11,29 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <style>
+    .alert {
+        margin-bottom: 15px;
+        padding: 0.9375rem; 
+    }
+    .alert .btn {
+        padding: 3px 12px;
+        margin-right: 20px; 
+    }
+    .alert .btn:hover {
+        box-shadow: none; 
+    }
+    .alert .alert-icon svg {
+        vertical-align: middle;
+        width: 18px;
+        height: 18px; 
+    }
+    .alert .close {
+        color: #fff;
+        opacity: 1;
+        width: 18px; 
+    }
+    </style>
     <!-- PAGE STYLES -->
     @yield('style')
 
@@ -22,6 +45,14 @@
             <div class="loader-content">
                 <div class="spinner-grow align-self-center"></div>
             </div>
+        </div>
+    </div>
+    <!--  NOTIFICATION  -->
+    <div class="alert mx-0 my-0 px-2 py-1 bg-dark" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" data-dismiss="alert" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+        <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <strong>While poverty persists, there is no true freedom.</strong>
         </div>
     </div>
     <!--  BEGIN NAVBAR  -->
@@ -243,7 +274,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="more" data-parent="#topAccordion">
                             <li>
-                                <a href="{{url('config_page')}}"> Config Page</a>
+                                <a href="{{url('config-page')}}"> Config Page</a>
                             </li>
                             <li>
                                 <a href="{{url('accounts')}}"> Account Management </a>

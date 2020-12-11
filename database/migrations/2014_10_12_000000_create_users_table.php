@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('Phone')->nullable();
             $table->string('Profession')->nullable();
             $table->string('Address')->nullable();
-            $table->time('Birthday')->nullable();
+            $table->date('Birthday')->nullable();
             $table->string('Gender')->default('Nam');
             $table->string('Facebook')->nullable();
             $table->string('LinkedIn')->nullable();

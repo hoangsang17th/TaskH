@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTodosTable extends Migration
+class CreateNotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTodosTable extends Migration
      */
     public function up()
     {
-        Schema::create('todos', function (Blueprint $table) {
-            $table->increments('ToDo_ID');
+        Schema::create('notes', function (Blueprint $table) {
+            $table->increments('Note_ID');
             $table->integer('id');
-            $table->string('Mission_ToDo')->nullable();
-            $table->date('Completion_Date')->nullable();
-            $table->timestamps();
+            $table->string('Note_Name');
+            $table->string('Note_Des');
+            $table->integer('Rule');
+            $table->date('Note_Date');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateTodosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todos');
+        Schema::dropIfExists('notes');
     }
 }

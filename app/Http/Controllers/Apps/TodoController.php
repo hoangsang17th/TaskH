@@ -49,7 +49,6 @@ class TodoController extends Controller
     {
         $todo = new todo;
         $todo->Mission_ToDo = $request->Mission_ToDo;
-        $todo->Des_ToDo = $request->Des_ToDo;
         $todo->id = Auth::user()->id;
         $todo->save();
         return redirect()->route('todo.index');

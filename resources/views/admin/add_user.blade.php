@@ -1,7 +1,7 @@
 @extends('layouts.navigation')
 @section('title', 'Add User')
 @section('style')
-    <link href="{{asset('assets/css/users/account-setting.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('assets/css/users/account-setting.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 <div class="account-settings-container layout-top-spacing">
@@ -85,5 +85,4 @@
 @endsection
 @section('javascript')
 <script src="{{asset('assets/js/users/account-settings.js')}}"></script>
-
 @endsection

@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
         $user->name = $faker->name;
         $user->email = $faker->freeEmail;
         $user->password = Hash::make('12345678');
-        $user->Position_ID = 1;
+        $user->Position_ID = 3;
         $user->save();
         }
     }

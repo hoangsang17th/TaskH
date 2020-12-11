@@ -12,7 +12,6 @@ class todo extends Model
         'ToDo_ID',
         'id',
         'Mission_ToDo',
-        'Des_ToDo',
         'Completion_Date',
     ];
 }

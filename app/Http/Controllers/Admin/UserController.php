@@ -119,7 +119,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-
         $user_info = UserModel::find($id);
         $user_info->delete();
         return redirect()->route('accounts.index');

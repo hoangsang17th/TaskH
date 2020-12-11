@@ -59,13 +59,8 @@
                         </div>
                         <div class="account-settings-footer">
                             <div class="as-footer-container">
-                                {{-- <form action="{{ route('accounts.destroy' ,$user_info->id )}}" method="POST" id="form-destroy">
-                                    <input name="_method" type="hidden" value="DELETE">
-                                    @csrf
-                                <button type="submit" class="btn btn-danger">Delete</button> --}}
-                                <button class="btn btn-danger" onclick="event.preventDefault(); 
-document.getElementById('destroyform').submit();">Delete</button>
-                                </form>
+                                <a href="{{ route('accounts.destroy' ,$user_info->id )}}" class="btn btn-danger" onclick="event.preventDefault(); 
+document.getElementById('destroyform').submit();">Delete</a>
                                 <button id="multiple-messages" type="submit" class="btn btn-primary">Save Changes</button>
                             </div>
                         </div>

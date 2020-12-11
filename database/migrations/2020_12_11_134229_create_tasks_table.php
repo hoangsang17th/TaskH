@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTodosTable extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTodosTable extends Migration
      */
     public function up()
     {
-        Schema::create('todos', function (Blueprint $table) {
-            $table->increments('ToDo_ID');
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->increments('Task_ID');
+            $table->string('Project_ID');
             $table->integer('id');
-            $table->string('Mission_ToDo')->nullable();
-            $table->date('Completion_Date')->nullable();
+            $table->string('Task_Name');
+            // https://demo.rajodiya.com/taskgo/projects/8/task
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateTodosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todos');
+        Schema::dropIfExists('tasks');
     }
 }
