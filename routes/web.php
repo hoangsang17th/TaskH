@@ -19,17 +19,30 @@ use App\Http\Middleware\Authenticate;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/notes', function () {
-    return view('apps.notes');
-});
+// Route::get('/notes', function () {
+//     return view('apps.notes');
+// });
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('todo', 'Apps\TodoController');
+    // Controller Apps
+    Route::resource('projects', 'Apps\ProjectController'); // Dự án đang thực hiện
+    Route::resource('todo', 'Apps\TodoController'); // Todo list
+    Route::get('/mission', 'Apps\ToDoCompletionController@index'); // Todo list đã hoàn thành
+    Route::resource('notes', 'Apps\NotesController'); // Ghi chú
+
+    // Controller Admin
+    Route::resource('accounts', 'Admin\UserController'); // Thông tin nhân viên
+    Route::resource('config-page', 'Admin\ConfigPageController'); // Cài đặt trang
+
+    // Controller Hệ thống
     Route::resource('profile', 'ProfileController');
-    Route::resource('projects', 'Apps\ProjectController');
-    Route::resource('accounts', 'Admin\UserController');
-    Route::resource('config-page', 'Admin\ConfigPageController');
+    Route::get('/home', 'HomeController@index')->name('home');
     
-Route::get('/home', 'HomeController@index')->name('home');
+
+    
+    
+    
+    
+
 });
-Route::get('/mission', 'Apps\ToDoCompletionController@index');
+

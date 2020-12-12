@@ -19,8 +19,9 @@ class CreateProjectsTable extends Migration
             $table->string('Project_Name');
             $table->integer('Status_ID')->default('1');
             $table->longText('Des_Project')->nullable();
+            $table->longText('Project_Image')->default('avatar-4.png');
             $table->date('Start_Date')->nullable();
-            $table->date('Completion_Date')->nullable();
+            $table->date('End_Date')->nullable();
             $table->integer('Budget')->nullable();
             $table->timestamps();
         });

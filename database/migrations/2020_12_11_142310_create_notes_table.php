@@ -20,6 +20,7 @@ class CreateNotesTable extends Migration
             $table->string('Note_Des');
             $table->integer('Rule');
             $table->date('Note_Date');
+            $table->timestamps();
         });
     }
 

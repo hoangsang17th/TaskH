@@ -14,9 +14,10 @@ class CreateStaffProjectsTable extends Migration
     public function up()
     {
         Schema::create('staff_projects', function (Blueprint $table) {
-            $table->increments('SProject_ID');
+            $table->increments('Staff_ID');
             $table->integer('Project_ID');
             $table->integer('id');
+            $table->integer('Role_ID');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@
 
 <!-- This is content of the page -->
 @section('content')
-<div class="row layout-top-spacing" id="cancel-row">
+<div class="row layout-top-spacing mt-lg-2 mt-5 pt-3 pt-lg-0" id="cancel-row">
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
         <div class="widget-content widget-content-area br-6">
             <div class="text-center">

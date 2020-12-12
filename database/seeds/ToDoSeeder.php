@@ -16,7 +16,7 @@ class ToDoSeeder extends Seeder
         for($i=0; $i<=100; $i++){
         $todo = new todo;
         $todo->Mission_ToDo = $faker->text($maxNbChars = 25);
-        $todo->id = rand(1,100);
+        $todo->id = rand(1,3);
         $todo->save();
         }
     }

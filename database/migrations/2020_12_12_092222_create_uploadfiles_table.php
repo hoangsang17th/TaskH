@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTasksTable extends Migration
+class CreateUploadfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->increments('Task_ID');
-            $table->string('Project_ID');
+        Schema::create('uploadfiles', function (Blueprint $table) {
+            $table->increments('Upload_ID');
             $table->integer('id');
-            $table->string('Task_Name');
-            $table->string('Task_Stage');
-            // https://demo.rajodiya.com/taskgo/projects/8/task
+            $table->integer('Task_ID');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('uploadfiles');
     }
 }

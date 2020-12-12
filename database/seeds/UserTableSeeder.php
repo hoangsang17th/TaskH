@@ -13,11 +13,11 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        for($i=0; $i<=100; $i++){
+        for($i=0; $i<=3; $i++){
         $user = new UserModel;
         $user->name = $faker->name;
-        $user->email = $faker->freeEmail;
-        $user->password = Hash::make('12345678');
+        $user->email = $i."@TaskGo.com";
+        $user->password = Hash::make('@TaskGo.com');
         $user->Position_ID = 3;
         $user->save();
         }
