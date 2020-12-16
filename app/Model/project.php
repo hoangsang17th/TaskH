@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class project extends Model
 {
     protected $table = 'projects';
+    protected $primaryKey = 'Project_ID';
     protected $fillable = [
         'Project_ID',
         'Customer_ID',
         'Project_Name',
         'Status_ID',
         'Des_Project',
+        'Project_Image',
         'Start_Date',
-        'Completion_Date',
+        'End_Date',
         'Budget',
     ];
     public function StaffProject()

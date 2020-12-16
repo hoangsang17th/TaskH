@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class tasks extends Model
 {
-    protected $table = 'todos';
-    protected $primaryKey = 'ToDo_ID';
+    protected $table = 'tasks';
+    protected $primaryKey = 'Task_ID';
     protected $fillable = [
-        'ToDo_ID',
+        'Task_ID',
+        'Project_ID',
         'id',
-        'Mission_ToDo',
-        'Completion_Date',
+        'Task_Name',
+        'Task_Stage',
     ];
 }

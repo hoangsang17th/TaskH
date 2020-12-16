@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class configpage extends Model
 {
-    protected $table = 'todos';
-    protected $primaryKey = 'ToDo_ID';
+    protected $table = 'configpages';
+    protected $primaryKey = 'Config_ID';
     protected $fillable = [
-        'ToDo_ID',
-        'id',
-        'Mission_ToDo',
-        'Completion_Date',
+        'Config_ID',
+        'Config_Name',
+        'Content',
     ];
 }

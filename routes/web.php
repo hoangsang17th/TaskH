@@ -34,6 +34,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('accounts', 'Admin\UserController'); // Thông tin nhân viên
     Route::resource('config-page', 'Admin\ConfigPageController'); // Cài đặt trang
 
+    // Controller Manager
+    Route::resource('customer', 'Manager\CustomerController'); // Thông tin nhân viên
+
     // Controller Hệ thống
     Route::resource('profile', 'ProfileController');
     Route::get('/home', 'HomeController@index')->name('home');

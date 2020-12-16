@@ -6,12 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class customer extends Model
 {
-    protected $table = 'todos';
-    protected $primaryKey = 'ToDo_ID';
+    protected $table = 'customers';
+    protected $primaryKey = 'Customer_ID';
     protected $fillable = [
-        'ToDo_ID',
-        'id',
-        'Mission_ToDo',
-        'Completion_Date',
+        'Customer_ID',
+        'Customer_Name',
+        'Customer_Phone',
+        'Customer_Address',
+        'Customer_Email',
+        'Customer_Facebook',
+        'Customer_Description',
+        'Customer_Birthday',
     ];
 }
