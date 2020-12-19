@@ -18,4 +18,8 @@ class customer extends Model
         'Customer_Description',
         'Customer_Birthday',
     ];
+    public function Customer()
+    {
+        return $this->hasOne('App\Model\project', 'Customer_ID', 'Customer_ID');
+    }
 }

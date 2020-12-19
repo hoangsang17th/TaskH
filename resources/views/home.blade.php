@@ -11,7 +11,7 @@
 <div class="row layout-top-spacing">
     <div class="col-12 layout-spacing">
         <div class="row widget-statistic mt-lg-1 mt-5">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-12 pt-1">
+            <div class="col-lg-3 col-md-6 col-12 py-0 text-center pt-sm-2 pt-lg-1">
                 <div class="widget widget-one_hybrid widget-followers">
                     <div class="widget-heading">
                         <div class="w-icon">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-4 col-12 pt-1">
+            <div class="col-lg-3 col-md-6 col-12 py-0 text-center pt-sm-2 pt-lg-1">
                 <div class="widget widget-one_hybrid widget-referral">
                     <div class="widget-heading">
                         <div class="w-icon">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-4 col-12 pt-1">
+            <div class="col-lg-3 col-md-6 col-12 py-0 text-center pt-sm-2 pt-lg-1">
                 <div class="widget widget-one_hybrid widget-engagement">
                     <div class="widget-heading">
                         <div class="w-icon">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-4 col-12 pt-1">
+            <div class="col-lg-3 col-md-6 col-12 py-0 text-center pt-sm-2 pt-lg-1">
                 <div class="widget widget-one_hybrid widget-engagement">
                     <div class="widget-heading">
                         <div class="w-icon">

@@ -21,7 +21,10 @@ class project extends Model
     ];
     public function StaffProject()
     {
-        # code...
         return $this->hasMany('App\Model\StaffProject', 'Project_ID', 'Project_ID');
+    }
+    public function Customer()
+    {
+        return $this->belongsTo('App\Model\customer', 'Customer_ID', 'Customer_ID');
     }
 }

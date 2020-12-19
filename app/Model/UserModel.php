@@ -21,4 +21,8 @@ class UserModel extends Model
         'LinkedIn',
         'Des'
     ];
+    public function User()
+    {
+        return $this->hasOne('App\Model\StaffProject', 'id', 'id');
+    }
 }

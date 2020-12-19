@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\project;
 use App\Model\StaffProject;
+use App\Model\UserModel;
 use Auth;
 class ProjectController extends Controller
 {
@@ -20,14 +21,16 @@ class ProjectController extends Controller
             # code...
             $id = Auth::user()->id;
             $StaffProject = StaffProject::where('id', $id)->get();
-            // foreach ($StaffProject as $StaffProject){
-            //     echo $StaffProject->project->Project_Name;
+            // foreach ($StaffProject->$projects as $v){
+            //     echo $v->Status_ID;
             // }
             // $project = project::where('Project_ID', $StaffProject->Project_ID)->get();
             // $project = project::paginate(10); Giống limit bên php á
             // Để qua trang 2 chỉ cần gõ ?page=2
             // Quá ngon
-            return view('apps.project', ['project' => $StaffProject]);
+            
+            // echo $Staff->projects->statusprojects->Status_ID;
+            return view('apps.project',compact('StaffProject'));
         }
     }
 
@@ -60,13 +63,25 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $StaffProject = StaffProject::where('id', $id)->get();
-        // $todo = todo::where('id', Auth::user()->id)
-        //                 ->where('ToDo_ID', '=', $id)
-        //                 ->get();
-        // return view('apps.edittodo', compact('todo'));
-        // todo/$id
-        // return View('apps.edittodo')->with('todo', $todo);
+        $StaffProject = StaffProject::where('Project_ID', $id)->get();
+        $confirm = 0;
+        $staffid = 1;
+        foreach ($StaffProject as $Staff){
+            if($Staff->id == Auth::user()->id){
+                $confirm = 1;
+            }
+            if($Staff->Role_ID == 1){
+                $staffid = $Staff->id;
+            }
+        }
+        if($confirm == 1){
+            $project = project::find($id);
+            $leader = UserModel::find($staffid);
+            return view('apps.project_detail')
+            ->with(compact('project'))
+            ->with(compact('leader'));
+        }
+        else return redirect()->route('home');
     }
 
     /**
