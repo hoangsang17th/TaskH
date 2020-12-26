@@ -141,7 +141,7 @@
         </div>
     </div>
     <div class="col-xl-8 col-lg-7 col-md-6 col-12">
-        <div class="widget-content widget-content-area br-6">
+        {{-- <div class="widget-content widget-content-area br-6">
             <form action="">
             <div class="row">
                 <div class="col-12">
@@ -161,8 +161,8 @@
                 </div>
             </div>
             </form>
-        </div>
-        <div class="row layout-top-spacing">
+        </div> --}}
+        <div class="row">
             <div id="timelineProfile" class="col-lg-12 layout-spacing">
                  <div class="statbox widget box box-shadow">
                     <div class="widget-content widget-content-area">
@@ -174,7 +174,7 @@
                                 
                                 <div class="timeline-post-content">
                                     <div class="user-profile">
-                                        <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="">
+                                        <img src="{{ asset('assets/img/Avatar-4.png') }}" alt="">
                                     </div>
                                     <div class="">
                                         <h4>Laurie Fox</h4>

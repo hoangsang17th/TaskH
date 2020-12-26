@@ -53,10 +53,10 @@
                     <div class="note-item all-notes {{ $rnote}}">
                         <div class="note-inner-content">
                             <div class="note-content">
-                                <p class="note-title" data-noteTitle="Team meet at Starbucks">{{ $vnotes->Note_Name }}</p>
+                                <p class="note-title" data-noteTitle="{{ $vnotes->Note_Name }}">{{ $vnotes->Note_Name }}</p>
                                 <p class="meta-time">{{ $vnotes->Note_Date }}</p>
                                 <div class="note-description-content">
-                                    <p class="note-description" data-noteDescription="Etiam a odio eget enim aliquet laoreet lobortis sed ornare nibh.">{{ $vnotes->Note_Des }}</p>
+                                    <p class="note-description" data-noteDescription="{{ $vnotes->Note_Des }}">{{ $vnotes->Note_Des }}</p>
                                 </div>
                             </div>
                             <div class="note-action">

@@ -3,12 +3,11 @@
 var quill = new Quill('#editor-container', {
   modules: {
     toolbar: [
-      [{ header: [1, 2, false] }],
       ['bold', 'italic', 'underline'],
-      ['image', 'code-block']
+      ['code-block']
     ]
   },
-  placeholder: 'Compose an epic...',
+  placeholder: 'Description of this project',
   theme: 'snow'  // or 'bubble'
 });
 
@@ -19,7 +18,7 @@ var quill = new Quill('#editor-container', {
     modules: {
       toolbar: '#toolbar-container'
     },
-    placeholder: 'Compose an epic...',
+    placeholder: 'Description of this project',
     theme: 'snow'
   });
   

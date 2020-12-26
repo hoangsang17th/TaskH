@@ -19,9 +19,9 @@ use App\Http\Middleware\Authenticate;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/notes', function () {
-//     return view('apps.notes');
-// });
+Route::get('/tests', function () {
+    return view('management.add_project');
+});
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     // Controller Apps
@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('todo', 'Apps\TodoController'); // Todo list
     Route::get('/mission', 'Apps\ToDoCompletionController@index'); // Todo list đã hoàn thành
     Route::resource('notes', 'Apps\NotesController'); // Ghi chú
+    Route::resource('chat', 'Apps\ChatController'); // Trò chuyện
 
     // Controller Admin
     Route::resource('accounts', 'Admin\UserController'); // Thông tin nhân viên

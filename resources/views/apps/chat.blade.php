@@ -28,7 +28,7 @@
                         <div class="person" data-chat="person6">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -43,7 +43,7 @@
                         <div class="person" data-chat="person1">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -58,7 +58,7 @@
                         <div class="person" data-chat="person2">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -73,7 +73,7 @@
                         <div class="person" data-chat="person3">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -88,7 +88,7 @@
                         <div class="person" data-chat="person4">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -103,7 +103,7 @@
                         <div class="person" data-chat="person5">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -118,7 +118,7 @@
                         <div class="person" data-chat="person7">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -133,7 +133,7 @@
                         <div class="person" data-chat="person8">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -148,7 +148,7 @@
                         <div class="person" data-chat="person9">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -163,7 +163,7 @@
                         <div class="person" data-chat="person10">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -178,7 +178,7 @@
                         <div class="person" data-chat="person11">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -193,7 +193,7 @@
                         <div class="person border-none" data-chat="person12">
                             <div class="user-info">
                                 <div class="f-head">
-                                    <img src="assets/img/90x90.jpg" alt="avatar">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="avatar">
                                 </div>
                                 <div class="f-body">
                                     <div class="meta-info">
@@ -224,7 +224,7 @@
 
                             <div class="calling-user-img">
                                 <div class="">
-                                    <img src="assets/img/90x90.jpg" alt="dynamic-image">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="dynamic-image">
                                 </div>
 
                                 <div class="timer"><label class="minutes">00</label> : <label class="seconds">00</label></div>
@@ -255,7 +255,7 @@
 
                             <div class="calling-user-img">
                                 <div class="">
-                                    <img src="assets/img/90x90.jpg" alt="dynamic-image">
+                                    <img src="{{asset('assets/img/Avatar-1.png')}}" alt="dynamic-image">
                                 </div>
 
                             </div>
@@ -271,7 +271,7 @@
 
                     <div class="chat-box-inner">
                         <div class="chat-meta-user">
-                            <div class="current-chat-user-name"><span><img src="assets/img/90x90.jpg" alt="dynamic-image"><span class="name"></span></span></div>
+                            <div class="current-chat-user-name"><span><img src="{{asset('assets/img/Avatar-1.png')}}" alt="dynamic-image"><span class="name"></span></span></div>
 
                             <div class="chat-action-btn align-self-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone  phone-call-screen"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>

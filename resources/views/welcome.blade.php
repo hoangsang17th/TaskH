@@ -94,7 +94,7 @@
                 <div class="title m-b-md">
                     TaskGo
                 </div>
-                <p>v1.1.2</p>
+                <p>v1.1.5</p>
                 <h2>Your destination is</h2>
                 <div class="links">
                     <a target="_blank" href="https://laravel.com/docs">Docs</a>
