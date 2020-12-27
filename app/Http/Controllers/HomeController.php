@@ -32,10 +32,12 @@ class HomeController extends Controller
         $ctasks = tasks::where('id', Auth::user()->id)->count();
         $ctodo = todo::where('id', Auth::user()->id)->count();
         $cnotes = notes::where('id', Auth::user()->id)->count();
+
         return view('home')
         ->with(compact('ctodo'))
         ->with(compact('cnotes'))
         ->with(compact('cStaffProject'))
         ->with(compact('ctasks'));
+        
     }
 }

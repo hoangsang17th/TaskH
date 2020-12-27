@@ -18,7 +18,7 @@
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
         <div class="widget-content widget-content-area br-6">
             <div class="text-center">
-                <a href="" class="btn btn-primary">New Customer</a>
+                <a href="customer/create" class="btn btn-primary">New Customer</a>
             </div>
             <div class="table-responsive mb-4 mt-4">
                 <table class="multi-table table table-striped table-bordered table-hover non-hover" style="width:100%">

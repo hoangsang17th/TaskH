@@ -1,5 +1,5 @@
 @extends('layouts.navigation')
-@section('title', 'Customer Edit')
+@section('title', 'Customer Add')
 
 @section('style')
 <link href="{{asset('assets/css/users/account-setting.css')}}" rel="stylesheet" type="text/css" />
@@ -13,8 +13,7 @@
         <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                    <form class="section general-info" action="{{ route('customer.update', $customer->Customer_ID)}}" method="POST">
-                        @method('PUT')
+                    <form class="section general-info" action="{{ route('customer.store')}}" method="POST">
                         {{ csrf_field() }} 
                         <div class="info">
                             <h6 class="text-center">General Information</h6>
@@ -27,37 +26,37 @@
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="fullName">Full Name</label>
-                                                            <input type="text" class="form-control mb-4" name="Customer_Name" placeholder="Full Name" value="{{ $customer->Customer_Name}}">
+                                                            <input type="text" class="form-control mb-4" name="Customer_Name" placeholder="Full Name">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="fullName">Birth of Day</label>
-                                                            <input id="basicFlatpickr" value="{{ $customer->Customer_Birthday}}" class="form-control flatpickr flatpickr-input active" type="text" placeholder="Select Date.." name="Customer_Birthday">
+                                                            <input id="basicFlatpickr" class="form-control flatpickr flatpickr-input active" type="text" placeholder="Select Date.." name="Customer_Birthday">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="address">Phone</label>
-                                                            <input type="text" class="form-control mb-4" placeholder="Phone" value="0{{ $customer->Customer_Phone}}" name="Customer_Phone">
+                                                            <input type="text" class="form-control mb-4" placeholder="Phone" name="Customer_Phone">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="address">Address</label>
-                                                            <input type="text" class="form-control mb-4" placeholder="Address" value="{{ $customer->Customer_Address}}" name="Customer_Address">
+                                                            <input type="text" class="form-control mb-4" placeholder="Address" name="Customer_Address">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label for="email">Email</label>
-                                                            <input type="email" class="form-control mb-4" placeholder="Customer_Email" value="{{ $customer->Customer_Email}}" name="Customer_Email">
+                                                            <input type="email" class="form-control mb-4" placeholder="Customer_Email" name="Customer_Email">
                                                         </div>
                                                     </div>
                                                     <div class="col-12 mx-auto">
                                                         <div class="form-group">
                                                             <label for="aboutBio">Bio</label>
-                                                            <textarea class="form-control" id="aboutBio" placeholder="Tell something interesting about yourself" rows="10" name="Customer_Description">{{ $customer->Customer_Description }}</textarea>
+                                                            <textarea class="form-control" id="aboutBio" placeholder="Tell something interesting about yourself" rows="10" name="Customer_Description"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
@@ -65,7 +64,7 @@
                                                             <div class="input-group-prepend mr-3">
                                                                 <span class="input-group-text" id="fb"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Facebook Username" aria-label="Username" aria-describedby="fb" value="{{ $customer->Customer_Facebook }}" name="Customer_Facebook">
+                                                            <input type="text" class="form-control" placeholder="Facebook Username" aria-label="Username" aria-describedby="fb" name="Customer_Facebook">
                                                         </div>
                                                     </div> 
                                                 </div>

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Manager;
+use Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
-use App\Model\configpage;
-class ConfigPageController extends Controller
+use App\Model\skill;
+class SkillController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,20 +15,8 @@ class ConfigPageController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->Position_ID == 2){
-            $config_1 = configpage::find(1);
-            $config_2 = configpage::find(2);
-            $config_3 = configpage::find(3);
-            $config_4 = configpage::find(4);
-            return view('admin.config-page')
-            ->with(compact('config_1'))
-            ->with(compact('config_2'))
-            ->with(compact('config_3'))
-            ->with(compact('config_4'));
-        } 
-        else{
-            return redirect()->route('home');
-        }
+        $skill = skill::all();
+        return view('management.skill',compact('skill'));
     }
 
     /**
@@ -38,7 +26,12 @@ class ConfigPageController extends Controller
      */
     public function create()
     {
-        return redirect()->route('home');
+        if(Auth::user()->Position_ID == 1){
+            return view('management.add_skill');
+        } 
+        else{
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -49,7 +42,10 @@ class ConfigPageController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect()->route('home');
+        $skill = new skill;
+        $skill->Skill_Name = $request->Skill_Name;
+        $skill->save();
+        return redirect()->route('skill.index');
     }
 
     /**
@@ -71,7 +67,13 @@ class ConfigPageController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->Position_ID == 1){
+            $skill = skill::find($id);
+            return view('management.edit_skill', compact('skill')); 
+        } 
+        else{
         return redirect()->route('home');
+        }
     }
 
     /**
@@ -83,20 +85,11 @@ class ConfigPageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if(Auth::user()->Position_ID == 2){
-            $config_1 = configpage::find(1);
-            $config_2 = configpage::find(2);
-            $config_3 = configpage::find(3);
-            $config_4 = configpage::find(4);
-            $config_1->Content = $request->config_1;
-            $config_2->Content = $request->config_2;
-            $config_3->Content = $request->config_3;
-            $config_4->Content = $request->config_4;
-            $config_1->save();
-            $config_2->save();
-            $config_3->save();
-            $config_4->save();
-            return redirect()->route('config-page.index');
+        if(Auth::user()->Position_ID == 1){
+            $skill = skill::find($id);
+            $skill->Skill_Name = $request->Skill_Name;
+            $skill->save();
+            return redirect()->route('skill.index');
         } 
         else{
         return redirect()->route('home');
@@ -111,6 +104,6 @@ class ConfigPageController extends Controller
      */
     public function destroy($id)
     {
-        return redirect()->route('home');
+        //
     }
 }

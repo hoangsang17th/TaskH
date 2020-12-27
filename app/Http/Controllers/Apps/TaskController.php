@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Apps;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Model\project;
+use App\Model\StaffProject;
+use App\Model\UserModel;
+use App\Model\tasks;
+use Auth;
 
 class TaskController extends Controller
 {
@@ -14,7 +19,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+        $StaffProject = StaffProject::where('id', $id)->get();
+        return view('apps.tasks',compact('StaffProject'));
     }
 
     /**

@@ -16,8 +16,13 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer = customer::all();
+        if(Auth::user()->Position_ID == 1){
+            $customer = customer::all();
         return view('management.customer', compact('customer'));
+        } 
+        else{
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -27,7 +32,12 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::user()->Position_ID == 1){
+            return view('management.add_customer');
+        } 
+        else{
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -37,8 +47,17 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {;
+        $customer = new customer;
+        $customer->Customer_Name = $request->Customer_Name;
+        $customer->Customer_Phone = $request->Customer_Phone;
+        $customer->Customer_Address = $request->Customer_Address;
+        $customer->Customer_Email = $request->Customer_Email;
+        $customer->Customer_Facebook = $request->Customer_Facebook;
+        $customer->Customer_Description = $request->Customer_Description;
+        $customer->Customer_Birthday = $request->Customer_Birthday;
+        $customer->save();
+        return redirect()->route('customer.index');
     }
 
     /**
@@ -49,7 +68,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        return redirect()->route('home');
     }
 
     /**
@@ -62,7 +81,7 @@ class CustomerController extends Controller
     {
         if(Auth::user()->Position_ID == 1){
             $customer = customer::find($id);
-            return view('management.edit_customer', compact('customer'));
+            return view('management.edit_customer', compact('customer')); 
         } 
         else{
         return redirect()->route('home');
@@ -104,8 +123,9 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        $customer = customer::find($id);
-        $customer->delete();
-        return redirect()->route('customer.index');
+        // $customer = customer::find($id);
+        // $customer->delete();
+        // return redirect()->route('customer.index');
+        return redirect()->route('home');
     }
 }

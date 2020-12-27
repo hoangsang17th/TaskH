@@ -17,7 +17,8 @@
         <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                    <form class="section general-info" action="{{ route('all_project.store')}}" method="POST">
+                    <form class="section general-info" action="{{ route('all_project.update', $project->Project_ID)}}" method="POST">
+                        @method('PUT')
                         {{ csrf_field() }} 
                         <div class="info">
                             <h6 class="text-center">General Information</h6>
@@ -31,7 +32,8 @@
                                                         <div class="form-group">
                                                             <label for="fullName">Customer Name</label>
                                                             <select name="Customer_ID"  class="form-control mb-4 selectpicker" data-size="5" data-live-search="true" data-style="btn btn-outline-primary">
-                                                                <option value="0">TaskGo Corp</option>
+                                                                <option value="{{$customered->Customer_ID}}">{{$customered->Customer_ID}}. {{$customered->Customer_Name}}</option>
+                                                                <option value="0">0. TaskGo Corp</option>
                                                                 @foreach ($customer as $value)
                                                                 <option value="{{$value->Customer_ID}}">{{$value->Customer_ID}}. {{$value->Customer_Name}}</option>
                                                                 @endforeach
@@ -52,31 +54,31 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label for="address">Project Name</label>
-                                                            <input type="text" class="form-control mb-4" placeholder="Project Name" name="Project_Name">
+                                                            <input type="text" class="form-control mb-4" placeholder="Project Name" name="Project_Name" value="{{$project->Project_Name}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="fullName">Start Date</label>
-                                                            <input name="Start_Date" id="basicFlatpickr" class="form-control flatpickr flatpickr-input active" type="text" placeholder="Select Date..">
+                                                            <input name="Start_Date" id="basicFlatpickr" class="form-control flatpickr flatpickr-input active" type="text" value="{{$project->Start_Date}}" placeholder="{{$project->Start_Date}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="address">End Date</label>
-                                                            <input name="End_Date" id="dateTimeFlatpickr" class="form-control flatpickr flatpickr-input" type="text" placeholder="Select Date..">
+                                                            <input name="End_Date" id="dateTimeFlatpickr" class="form-control flatpickr flatpickr-input" type="text" placeholder="{{$project->End_Date}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label for="address">Budget</label>
-                                                            <input name="Budget" class="form-control" type="number" placeholder="$1.000.000">
+                                                            <input name="Budget" class="form-control" type="number" placeholder="$1.000.000" value="{{$project->Budget}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-12 mx-auto">
                                                         <div class="form-group">
                                                             <label for="aboutBio">Description</label>
-                                                            <textarea class="form-control" id="aboutBio" placeholder="About Project" rows="10" name="Des_Project"></textarea>
+                                                            <textarea class="form-control" id="aboutBio" placeholder="About Project" rows="10" name="Des_Project">{{$project->Des_Project}}</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
