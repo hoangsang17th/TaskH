@@ -10,8 +10,11 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "fideloper/proxy": "^4.4",
+        "google/apiclient": "2.7",
+        "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^6.20",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "pulkitjalan/google-apiclient": "^4.1"
     },
     "require-dev": {
         "facade/ignition": "^1.16.4",

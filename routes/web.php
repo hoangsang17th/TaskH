@@ -33,11 +33,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('tasks', 'Apps\TaskController'); // Nhiệm vụ của dự án
     
 
-    // Controller Admin
+    // Controller Admin Position = 2
     Route::resource('accounts', 'Admin\UserController'); // Thông tin nhân viên
     Route::resource('config-page', 'Admin\ConfigPageController'); // Cài đặt trang
-
-    // Controller Manager
+    
+    // Controller Manager Position = 1
     Route::resource('customer', 'Manager\CustomerController'); // Thông tin nhân viên
     Route::resource('all_project', 'Manager\ProjectController'); // Nhiệm vụ của dự án
     Route::resource('skill', 'Manager\SkillController'); // Nhiệm vụ của dự án
@@ -46,7 +46,10 @@ Route::group(['middleware' => 'auth'], function () {
     // Controller Hệ thống
     Route::resource('profile', 'ProfileController');
     Route::get('/home', 'HomeController@index')->name('home');
-    
+    Route::get('send', 'LayoutsController@mail');
+    Route::get('email', function () {
+        return view('mail');
+    });
 
     
     
