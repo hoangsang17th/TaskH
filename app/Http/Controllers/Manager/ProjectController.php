@@ -62,6 +62,7 @@ class ProjectController extends Controller
     public function show($id)
     {
         $StaffProject = StaffProject::where('Project_ID', $id)->get();
+        $Count = StaffProject::where('Project_ID', $id)->count();
         $confirm = 0;
         $staffid = 1;
         foreach ($StaffProject as $Staff){
@@ -74,8 +75,10 @@ class ProjectController extends Controller
         }
         $project = project::find($id);
         $leader = UserModel::find($staffid);
-        return view('apps.project_detail')
+        return view('management.project_detail')
         ->with(compact('project'))
+        ->with(compact('StaffProject'))
+        ->with(compact('Count'))
         ->with(compact('leader'));
     }
 
@@ -135,6 +138,8 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        return redirect()->route('home');
+        $StaffProject = StaffProject::where('id', $id);
+        $StaffProject->delete();
+        return redirect()->route('all_project.index');
     }
 }

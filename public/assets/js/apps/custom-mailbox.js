@@ -233,7 +233,7 @@ $(document).ready(function() {
 	      ['image', 'code-block']
 	    ]
 	  },
-	  placeholder: 'Compose an epic...',
+	  placeholder: 'Bảo trì hệ thống',
 	  theme: 'snow'  // or 'bubble'
 	});
 

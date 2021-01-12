@@ -3,8 +3,11 @@
 {{$project->Project_Name}}
 @endsection
 @section('style')
-<link href="{{ asset('assets/css/components/timeline/custom-timeline.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{asset('assets/css/components/custom-modal.css')}}" rel="stylesheet" type="text/css" />
+{{-- <link href="{{ asset('assets/css/components/timeline/custom-timeline.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/components/custom-modal.css') }}" rel="stylesheet" type="text/css" /> --}}
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/custom_dt_multiple_tables.css')}}">
 @endsection
 @section('content')
 <div class="row layout-top-spacing mt-lg-2 mt-5 pt-3 pt-lg-0">
@@ -141,113 +144,61 @@
         </div>
     </div>
     <div class="col-xl-8 col-lg-7 col-md-6 col-12">
-        {{-- <div class="widget-content widget-content-area br-6">
-            <form action="">
-            <div class="row">
-                <div class="col-12">
-                    <label for="projectactivity">Project Activity</label>
-                    <textarea name="Tasks" rows="2" class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="row mt-2 justify-content-center">
-                <div class="col-12">
-                    <div class="custom-file mb-4">
-                        <input type="file" class="custom-file-input" id="customFile" name="UploadFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <input type="submit" class="btn btn-outline-primary" value="POST" >
-                </div>
-            </div>
-            </form>
-        </div> --}}
-        <div class="row">
-            <div id="timelineProfile" class="col-lg-12 layout-spacing">
-                 <div class="statbox widget box box-shadow">
-                    <div class="widget-content widget-content-area">
-                        <div class="timeline-simple">
-                            <p class="timeline-title">History</p>
 
-                            <div class="timeline-list">
-                                <p class="meta-update-day">Today</p>
-                                
-                                <div class="timeline-post-content">
-                                    <div class="user-profile">
-                                        <img src="{{ asset('assets/img/Avatar-4.png') }}" alt="">
-                                    </div>
-                                    <div class="">
-                                        <h4>Laurie Fox</h4>
-                                        <p class="meta-time-date">5 sec</p>
-                                        <div class="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                                            <h6 class="">Trending Style</h6>
-                                            <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat.</p>
-                                            <div class="post-contributers">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="widget-content widget-content-area br-6">
+            
+            <p class="text-primary h5">Total: {{$Count}}</p>
+            <div class="table-responsive mb-4 mt-4">
+            <table class="multi-table table table-striped table-bordered table-hover non-hover" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th class="text-dark text-right action-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slack"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"></path><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"></path><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"></path><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"></path><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"></path><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"></path><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"></path></svg>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($StaffProject as $value)
+                    <tr>
+                        <td>{{$value->user->name}}</td>
+                        <td>
+                            @if ($value->Role_ID == 1)
+                                <?php echo "<span class='badge outline-badge-warning'> Manager </span>";?>                                
+                            @elseif($value->Role_ID == 2)
+                                <?php echo "<span class='badge outline-badge-primary'> Leader </span>";?>                                
+                            @elseif($value->Role_ID == 3)
+                                <?php echo "<span class='badge outline-badge-success'> Staff </span>";?>                                
+                            @elseif($value->Role_ID == 4)
+                                <?php echo "<span class='badge outline-badge-danger'> Error </span>";?>
+                            @endif
+                            
+                        </td>
 
-                                <div class="timeline-post-content post-gallery">
-                                    <div class="user-profile">
-                                        <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="avatar">
-                                    </div>
-                                    <div class="">
-                                        <h4>Justin Cross</h4>
-                                        <p class="meta-time-date">45 min</p>
-                                        <div class="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                                            <h6 class="">Nature Photography</h6>
-                                            <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat.</p>
-                                            <div class="post-gallery-img">
-                                                <img src="{{ asset('assets/img/400x300.jpg') }}" alt="timeline">
-                                                <img src="{{ asset('assets/img/400x300.jpg') }}" alt="timeline">
-                                                <img src="{{ asset('assets/img/400x300.jpg') }}" alt="timeline">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-post-content">
-                                    <div class="user-profile">
-                                        <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="avatar">
-                                    </div>
-                                    <div class="">
-                                        <h4>Sonia Shaw</h4>
-                                        <p class="meta-time-date">2 hr</p>
-                                        <div class="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                            <h6 class="">Create new Project</h6>
-                                            <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat.</p>
-                                            <div class="post-contributers">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="timeline">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="timeline">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="timeline">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="timeline">
-                                                <img src="{{ asset('assets/img/Avatar-1.png') }}" alt="timeline">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <td class="text-right">
+                            <form action="{{ route('all_project.destroy' , $value->id)}}" method="POST">
+                                <input name="_method" type="hidden" value="DELETE">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-outline-danger px-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                </button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th class="text-dark text-right action-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slack"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"></path><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"></path><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"></path><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"></path><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"></path><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"></path><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"></path></svg>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
             </div>
         </div>
     </div>
@@ -256,5 +207,25 @@
 @endsection
 
 @section('javascript')
-
+<script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $('table.multi-table').DataTable({
+            "oLanguage": {
+                "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                "sInfo": "Showing page _PAGE_ of _PAGES_",
+                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                "sSearchPlaceholder": "Search...",
+                "sLengthMenu": "Results :  _MENU_",
+            },
+            "stripeClasses": [],
+            "lengthMenu": [7, 10, 20, 50],
+            "pageLength": 7,
+            drawCallback: function () {
+                $('.t-dot').tooltip({ template: '<div class="tooltip status" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' })
+                $('.dataTables_wrapper table').removeClass('table-striped');
+            }
+        });
+    } );
+</script>
 @endsection

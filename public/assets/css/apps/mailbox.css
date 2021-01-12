@@ -713,7 +713,7 @@
 .compose-box {
   background-color: #fff;
   border-radius: 6px; }
-  .compose-box .compose-content form .validation-text {
+  .compose-box .compose-content .validation-text {
     display: none;
     color: #e7515a;
     font-weight: 600;
@@ -721,26 +721,26 @@
     margin-top: 6px;
     font-size: 12px;
     letter-spacing: 1px; }
-  .compose-box .compose-content form .mail-form p {
+  .compose-box .compose-content .mail-form p {
     font-weight: 700;
     color: #3b3f5c;
     font-size: 16px;
     margin-bottom: 0;
     align-self: center; }
-  .compose-box .compose-content form .mail-form select {
+  .compose-box .compose-content .mail-form select {
     padding: 5px;
     font-weight: 700;
     color: #1b55e2;
     margin-left: 10px;
     border-radius: 6px;
     border: 1px solid #d3d3d3; }
-  .compose-box .compose-content form .mail-to svg, .compose-box .compose-content form .mail-cc svg, .compose-box .compose-content form .mail-subject svg {
+  .compose-box .compose-content .mail-to svg, .compose-box .compose-content .mail-cc svg, .compose-box .compose-content .mail-subject svg {
     align-self: center;
     font-size: 19px;
     margin-right: 14px;
     color: #1b55e2;
     font-weight: 600; }
-  .compose-box .compose-content form #editor-container h1, .compose-box .compose-content form #editor-container p {
+  .compose-box .compose-content #editor-container h1, .compose-box .compose-content #editor-container p {
     color: #3b3f5c; }
 
 #composeMailModal .modal-content .modal-footer {
@@ -913,7 +913,7 @@
     width: calc(100vw - 215px); }
   .mailbox-inbox .mail-content-container .action-btns a {
     margin-right: 0; }
-  .compose-box .compose-content form .mail-form select {
+  .compose-box .compose-content .mail-form select {
     margin-left: 3px;
     margin-top: 10px; } }
 

@@ -19,6 +19,9 @@ use App\Http\Middleware\Authenticate;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/a', function () {
+    return view('a');
+});
 // Route::get('/tests', function () {
 //     return view('management.add_project');
 // });
@@ -36,25 +39,20 @@ Route::group(['middleware' => 'auth'], function () {
     // Controller Admin Position = 2
     Route::resource('accounts', 'Admin\UserController'); // Thông tin nhân viên
     Route::resource('config-page', 'Admin\ConfigPageController'); // Cài đặt trang
+    Route::resource('sendemail', 'Admin\EmailController'); //Gửi Email
     
     // Controller Manager Position = 1
     Route::resource('customer', 'Manager\CustomerController'); // Thông tin nhân viên
     Route::resource('all_project', 'Manager\ProjectController'); // Nhiệm vụ của dự án
     Route::resource('skill', 'Manager\SkillController'); // Nhiệm vụ của dự án
+    Route::resource('staff_for_project', 'Manager\StaffController'); // Nhiệm vụ của dự án
+    
 
 
     // Controller Hệ thống
     Route::resource('profile', 'ProfileController');
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('send', 'LayoutsController@mail');
-    Route::get('email', function () {
-        return view('mail');
-    });
-
+    // Route::get('Drive', 'GGDriveController@index');
+    Route::get('/home', 'HomeController@index')->name('home');    
     
-    
-    
-    
-
 });
 

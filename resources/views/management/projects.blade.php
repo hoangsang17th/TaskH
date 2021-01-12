@@ -6,9 +6,9 @@
 
 <!-- includes file css of the page -->
 @section('style')
-<link rel="stylesheet" type="text/css" href="plugins/table/datatable/datatables.css">
-<link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
-<link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_multiple_tables.css">
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/custom_dt_multiple_tables.css')}}">
 @endsection
 
 <!-- This is content of the page -->
@@ -86,7 +86,7 @@
 <!-- Includes file javascript of the page -->
 @section('javascript')
 
-<script src="plugins/table/datatable/datatables.js"></script>
+<script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
 <script>
     $(document).ready(function() {
         $('table.multi-table').DataTable({

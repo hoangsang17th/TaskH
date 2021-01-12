@@ -39,53 +39,28 @@
                         <div class="w-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                         </div>
-                        <p class="w-value"></p>
+                        <p class="w-value">{{ $ctodo }}</p>
                         <h5 class="">ToDo</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 py-0 text-center pt-sm-2 pt-lg-1">
+                <div class="widget widget-one_hybrid widget-engagement">
+                    <div class="widget-heading">
+                        <div class="w-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </div>
+                        <p class="w-value">{{ $cnotes }}</p>
+                        <h5 class="">Notes</h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
-        <div class="widget widget-five">
-            <div class="widget-content">
-                <div class="w-content">
-                    <div class="">                                            
-                        <p class="task-left">8</p>
-                        <p class="task-completed"><span>12 Done</span></p>
-                        <p class="task-hight-priority"><span>3 Task</span> with High priotity</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
-        <div class="widget widget-five">
-            <div class="widget-content">
-                <div class="w-content">
-                    <div class="">                                            
-                        <p class="task-left">{{ $ctodo }}</p>
-                        <p class="task-completed"><span>12 Done</span></p>
-                        <p class="task-hight-priority"><span>3 ToDo</span> unfinished work</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
-        <div class="widget widget-five">
-            <div class="widget-content">
-                <div class="w-content">
-                    <div class="">                                            
-                        <p class="task-left">{{ $cnotes }}</p>
-                        <p class="task-completed"><span>Be Here Now</span></p>
-                        <p class="task-hight-priority"><span>Earlier you make up your mind.</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{-- <div class="col-12 layout-spacing">
+        <img src="{{asset('assets/img/home.jpg')}}" class="w-100 rounded">
+    </div> --}}
 </div>
 @endsection
 
