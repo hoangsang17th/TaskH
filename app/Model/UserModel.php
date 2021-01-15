@@ -25,4 +25,8 @@ class UserModel extends Model
     {
         return $this->hasOne('App\Model\StaffProject', 'id', 'id');
     }
+    public function Uploadfile()
+    {
+        return $this->hasOne('App\Model\Uploadfile', 'id', 'id');
+    }
 }

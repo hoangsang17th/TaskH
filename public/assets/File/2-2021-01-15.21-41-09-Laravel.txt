@@ -1,0 +1,52 @@
+Tạo file để tạo bảng
+php artisan make:migration create_users_table --create=users
+
+Tạo bảng trên csdl
+php artisan migrate
+
+php artisan make:controller TestControler --resource
+ToDo
+AccountManagement
+ProjectManagemenet
+CustomerManagement
+SkillManagement
+1:33:35
+
+Chuyển URL tới url mong muốn
+https://www.youtube.com/watch?v=ZeEVOzQ7Sgk&list=PLzrVYRai0riQ-K705397wDnlhhWu-gAUh&index=10
+return redirect()->route('route cần trỏ về');
+$request->
+path(): hiển thị route
+url(); Trả về url đầy đủ
+is('admin/*') kiểm tra url có chứa chuỗi 'admin/*' k
+isMethod('post'): kiểm tra phương thức truyền
+
+faker laravel thư viện dùng để tạo ra những cái tên hoặc đoạn văn bản ngẫu nhiên
+composer dump-autoload: Load lại các seeder vừa thêm vào và cũng là lệnh để load lại các thư viện trong trường hợp bị thiếu
+php artisan make:seeder ToDoSeeder : Tạo ra các seeder
+
+php artisan db:seed Thực hiện thêm vào csdl
+
+{{ $Biến->links()}} $Biến này là biến bên controller có sử dụng ::paginate()
+
+php artisan down/up tắt(bảo trì)/bật
+
+
+liên kết các bảng bằng cách liên kết các model
+php artisan make:middleware
+
+
+ Đôi khi tôi có thể đãng trí và thô lỗ nhưng không phải lúc nào tôi cũng cố ý như vậy
+Tôi có thể nói rằng tôi là một người thất thường, ủ rũ hơn những gì tôi muốn.
+Và tôi có thể nói rằng đôi khi tôi thiếu tự chủ và khi tôi mất bình tĩnh, điều đó cho thấy một mặt tối của tôi. mà tôi ngày càng nhận thức được. Rõ ràng là sau khi mất bình tĩnh, tôi cảm thấy tội lỗi và buồn bã. Tôi đã cải thiện khả năng kiểm soát bản thân và tiếp tục làm việc với nó.
+ Tôi dễ nói chuyện và là một người biết lắng nghe. Tôi hiểu mọi người và tôi kết bạn rất dễ dàng.
+Tôi không thích bị lợi dụng.
+Tôi cũng muốn nói rằng tôi là một người ham học hỏi và luôn muốn cải thiện hoặc học hỏi thêm về mọi thứ. Cuối cùng, tôi sẽ nói rằng tôi trầm lặng trong một đám đông nhưng không phải khi tôi đối đầu với mọi người.
+Tôi có tố chất lãnh đạo tốt và tự tin vào bản thân
+Tôi muốn coi mình là người có thể liên hệ với bất kỳ ai, bất kỳ nền văn hóa và bối cảnh nào
+Tôi thực sự là một người hướng nội; 
+ Ngoài ra, tôi có kiến ​​thức về nhiều chủ đề khác nhau nên có thể thu hút bất kỳ ai trong cuộc trò chuyện (nếu tôi chọn).
+Tôi phân tích và cân nhắc. Đôi khi điều đó khiến tôi thận trọng quá mức, những lần khác lại khiến tôi tính toán quá mức
+Tôi luôn cố gắng hoàn thiện bản thân và hành động phù hợp hơn với nguyện vọng của mình. Tôi đang tìm kiếm sự phản chiếu tương tự ở những người khác.
+
+Laptop Asus TUF FA506II AL016T R7 4800H/8GB/512G /15.6 FHD/WIN10

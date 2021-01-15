@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('customer', 'Manager\CustomerController'); // Thông tin nhân viên
     Route::resource('all_project', 'Manager\ProjectController'); // Nhiệm vụ của dự án
     Route::resource('skill', 'Manager\SkillController'); // Nhiệm vụ của dự án
-    Route::resource('staff_for_project', 'Manager\StaffController'); // Nhiệm vụ của dự án
+    // Route::resource('staff_for_project', 'Manager\StaffController'); // Nhiệm vụ của dự án
     
 
 

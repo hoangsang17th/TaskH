@@ -11,6 +11,12 @@ class Uploadfile extends Model
     protected $fillable = [
         'Upload_ID',
         'id',
-        'Task_ID',
+        'Project_ID',
+        'Des',
+        'FileName',
     ];
+    public function User()
+    {
+        return $this->belongsTo('App\Model\UserModel', 'id', 'id');
+    }
 }

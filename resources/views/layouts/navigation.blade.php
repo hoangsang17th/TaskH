@@ -221,9 +221,6 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="management"  data-parent="#topAccordion">
                             <li>
-                                <a href="{{url('staff_for_project')}}"> Staff for Project </a>
-                            </li>
-                            <li>
                                 <a href="{{url('customer')}}"> Customer </a>
                             </li>
                             <li>

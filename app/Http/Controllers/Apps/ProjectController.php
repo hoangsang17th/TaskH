@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Model\project;
 use App\Model\StaffProject;
 use App\Model\UserModel;
+use App\Model\Uploadfile;
 use Auth;
+use App\Model\customer;
 class ProjectController extends Controller
 {
     /**
@@ -52,7 +54,22 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->hasFile('UploadFile')){
+            $File = $request->file('UploadFile');
+            $Key = Auth::user()->id.".".date("Y-m-d.H-i-s");
+
+            $Upload = new Uploadfile;
+            $Upload->Project_ID = $request->Project_ID;
+            $Upload->id = Auth::user()->id;
+            $Upload->Des = $request->Des;
+            // $Upload->FileName = $FileName->getClientOriginalName();
+            $FileName = $Key.".".$File->getClientOriginalName('UploadFile');
+            $Upload->FileName = $FileName;
+            $Upload->save();
+            $File->move('assets/File', $FileName);
+            return redirect()->back();
+        }
+        
     }
 
     /**
@@ -77,8 +94,10 @@ class ProjectController extends Controller
         if($confirm == 1){
             $project = project::find($id);
             $leader = UserModel::find($staffid);
+            $upload = Uploadfile::where('Project_ID', $id)->get();
             return view('apps.project_detail')
             ->with(compact('project'))
+            ->with(compact('upload'))
             ->with(compact('leader'));
         }
         else return redirect()->route('home');
@@ -92,7 +111,13 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer = customer::all();
+        $project = project::find($id);
+        $customered = customer::find($project->Customer_ID);
+        return view('Apps.edit_project')
+        ->with(compact('project'))
+        ->with(compact('customered'))
+        ->with(compact('customer')); 
     }
 
     /**
@@ -104,7 +129,16 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = project::find($id);
+        $project->Customer_ID = $request->Customer_ID;
+        $project->Status_ID = $request->Status_ID;
+        $project->Project_Name = $request->Project_Name;
+        $project->Start_Date = $request->Start_Date;
+        $project->End_Date = $request->End_Date;
+        $project->Budget = $request->Budget;
+        $project->Des_Project = $request->Des_Project;
+        $project->save();
+        return redirect()->route('projects.index');
     }
 
     /**
