@@ -18,4 +18,6 @@
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects
 
 ## Notes
-In the web I have some static URL set, please change it if you can't run it
+In the web I have some static URL set(task.com), please change it if you can't run it
+
+I have not yet done the function of adding staff to the project, but my time has run out so I will not continue to improve it.
